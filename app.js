@@ -1,6 +1,11 @@
 const STORAGE_KEY = "cruise-countdown-v4";
 const ACCESS_KEY = "cruise-countdown-access-v1";
 const PASSWORD_HASH = "88d327bc7d7bb7877ece6b31cad3481dab2dcf3fb71724a9cbe8e8160071c0bb";
+const ASSET_BASE = "https://vacation-countdown-timer.perfect-pave-0422.chatgpt.site";
+
+function asset(path) {
+  return `${ASSET_BASE}/${path}`;
+}
 
 const defaultState = {
   tripName: "Utopia",
@@ -104,8 +109,8 @@ function pad(value, length) {
 function composite() {
   return `
     <div class="photo-composite">
-      <img class="island" alt="Perfect Day island" src="./perfect-day-island.jpeg" />
-      <img class="family" alt="Cruise group" src="./utopia-family-cutout.png" />
+      <img class="island" alt="Perfect Day island" src="${asset("perfect-day-island.jpeg")}" />
+      <img class="family" alt="Cruise group" src="${asset("utopia-family-cutout.png")}" />
     </div>
   `;
 }
@@ -117,7 +122,7 @@ function escapeAttr(value) {
 function renderLock(error = "") {
   app.innerHTML = `
     <section class="lock-screen">
-      <img class="hero-bg" alt="Utopia of the Seas at sea" src="./utopia-ship-header.jpg" />
+      <img class="hero-bg" alt="Utopia of the Seas at sea" src="${asset("utopia-ship-header.jpg")}" />
       <div class="hero-shade"></div>
       <form class="card lock-card" id="unlock-form">
         ${composite()}
@@ -155,7 +160,7 @@ function renderApp() {
 
   app.innerHTML = `
     <section class="hero">
-      <img class="hero-bg" alt="Utopia of the Seas at sea" src="./utopia-ship-header.jpg" />
+      <img class="hero-bg" alt="Utopia of the Seas at sea" src="${asset("utopia-ship-header.jpg")}" />
       <div class="hero-shade"></div>
       <header class="topbar">
         <div>
@@ -194,7 +199,7 @@ function renderApp() {
     </section>
     <section class="content">
       <figure class="panel">
-        <div class="map"><img alt="Road trip map to Port Canaveral" src="./roadtrip-map-clean.png" /></div>
+        <div class="map"><img alt="Road trip map to Port Canaveral" src="${asset("roadtrip-map-clean.png")}" /></div>
         <figcaption class="caption">
           <p class="blue-kicker">Road trip</p>
           <h2>Drive to Port Canaveral</h2>
@@ -241,7 +246,7 @@ function renderApp() {
         </div>
       </div>
       <aside class="panel ship-card">
-        <div class="ship-img"><img alt="Utopia of the Seas at sea" src="./utopia-ship-header.jpg" /></div>
+        <div class="ship-img"><img alt="Utopia of the Seas at sea" src="${asset("utopia-ship-header.jpg")}" /></div>
         <figcaption class="caption"><h2>${state.shipName}</h2></figcaption>
       </aside>
       <div class="panel settings">
