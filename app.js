@@ -1,10 +1,8 @@
 const STORAGE_KEY = "cruise-countdown-v4";
 const ACCESS_KEY = "cruise-countdown-access-v1";
 const PASSWORD_HASH = "88d327bc7d7bb7877ece6b31cad3481dab2dcf3fb71724a9cbe8e8160071c0bb";
-const ASSETS = window.UTOPIA_ASSETS || {};
-
 function asset(path) {
-  return ASSETS[path] || path;
+  return `./${path}`;
 }
 
 const defaultState = {
